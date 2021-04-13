@@ -114,11 +114,11 @@ Hamburger.STUFFING_POTATO = {cost: 15, kall: 10, name: "STUFFING_POTATO"};
 Hamburger.TOPPING_MAYO = {cost: 20, kall: 5, name: "TOPPING_MAYO"};
 Hamburger.TOPPING_SPICE = {cost: 15, kall: 0, name: "TOPPING_SPICE"};
 
-function HamburgerException(message) {
-  this.message = message;
-  this.toString = function () {
-    console.log(this.message);
-  };
+class HamburgerException extends Error {
+  constructor(message) {
+    super(message);
+    this.name = "HamburgerException";
+  }
 }
 
 // // маленький гамбургер с начинкой из сыра
@@ -130,7 +130,7 @@ function HamburgerException(message) {
 // // сколько стоит
 // console.log("Price: %f", hamburger2.calculatePrice());
 // // я тут передумал и решил добавить еще приправу
-// // hamburger2.addTopping(Hamburger.TOPPING_MAYO);
+// hamburger2.addTopping(Hamburger.TOPPING_MAYO);
 //  hamburger2.addTopping(Hamburger.TOPPING_SPICE);
 // //  hamburger2.addTopping(Hamburger.TOPPING_MAYO);
 // //  hamburger2.addTopping(Hamburger.TOPPING_SPICE);
