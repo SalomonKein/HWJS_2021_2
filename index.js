@@ -11,13 +11,13 @@ class Hamburger {
         ) {
           this.stuffing = stuffing;
         } else {
-          throw new HamburgerException(`invalid stuffing ${stuffing}`);
+          throw `invalid stuffing ${stuffing}`;
         }
       } else {
-        throw new HamburgerException(`invalid size ${size}`);
+        throw `invalid size ${size}`;
       }
     } catch (error) {
-      console.error("Error:", error.message);
+      console.log("Error:", error);
     }
   }
   addTopping(topping) {
@@ -32,13 +32,13 @@ class Hamburger {
           }
           return (this.topping = topping);
         } else {
-          throw new HamburgerException(`This topping is invited`);
+          throw `This topping is invited`;
         }
       } else {
-        throw new HamburgerException(`invalid topping ${topping}`);
+        throw `invalid topping ${topping}`;
       }
     } catch (error) {
-      console.error("Error:", error.message);
+      console.error("Error:", error);
     }
   }
   removeTopping(topping) {
@@ -114,12 +114,12 @@ Hamburger.STUFFING_POTATO = {cost: 15, kall: 10, name: "STUFFING_POTATO"};
 Hamburger.TOPPING_MAYO = {cost: 20, kall: 5, name: "TOPPING_MAYO"};
 Hamburger.TOPPING_SPICE = {cost: 15, kall: 0, name: "TOPPING_SPICE"};
 
-class HamburgerException extends Error {
-  constructor(message) {
-    super(message);
-    this.name = "HamburgerException";
-  }
-}
+// class HamburgerException extends Error {
+//   constructor(message) {
+//     super(message);
+//     this.name = "HamburgerException";
+//   }
+// }
 
 // // маленький гамбургер с начинкой из сыра
 // var hamburger2 = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
@@ -130,7 +130,7 @@ class HamburgerException extends Error {
 // // сколько стоит
 // console.log("Price: %f", hamburger2.calculatePrice());
 // // я тут передумал и решил добавить еще приправу
-// hamburger2.addTopping(Hamburger.TOPPING_MAYO);
+// hamburger2.addTopping(Hamburger.TOPPING_rty);
 //  hamburger2.addTopping(Hamburger.TOPPING_SPICE);
 // //  hamburger2.addTopping(Hamburger.TOPPING_MAYO);
 // //  hamburger2.addTopping(Hamburger.TOPPING_SPICE);
