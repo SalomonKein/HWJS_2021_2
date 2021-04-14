@@ -11,13 +11,13 @@ class Hamburger {
         ) {
           this.stuffing = stuffing;
         } else {
-          throw `invalid stuffing ${stuffing}`;
+          throw new Error (`invalid stuffing ${stuffing}`);
         }
       } else {
-        throw `invalid size ${size}`;
+        throw new Error (`invalid size ${size}`);
       }
     } catch (error) {
-      console.log("Error:", error);
+      console.log(error);
     }
   }
   addTopping(topping) {
@@ -32,13 +32,13 @@ class Hamburger {
           }
           return (this.topping = topping);
         } else {
-          throw `This topping is invited`;
+         throw new Error( `This topping is invited`);
         }
       } else {
-        throw `invalid topping ${topping}`;
+        throw new Error( `invalid topping ${topping}`);
       }
     } catch (error) {
-      console.error("Error:", error);
+      console.error(error);
     }
   }
   removeTopping(topping) {
@@ -123,6 +123,8 @@ Hamburger.TOPPING_SPICE = {cost: 15, kall: 0, name: "TOPPING_SPICE"};
 
 // // маленький гамбургер с начинкой из сыра
 // var hamburger2 = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.STUFFING_CHEESE);
+// var hamburger2 = new Hamburger(Hamburger.SIZE_SMALL, Hamburger.SIZE_SMALL);
+// var hamburger2 = new Hamburger(Hamburger.STUFFING_CHEESE, Hamburger.STUFFING_CHEESE);
 // // добавка из майонеза
 // hamburger2.addTopping(Hamburger.TOPPING_MAYO);
 // // спросим сколько там калорий
@@ -130,7 +132,8 @@ Hamburger.TOPPING_SPICE = {cost: 15, kall: 0, name: "TOPPING_SPICE"};
 // // сколько стоит
 // console.log("Price: %f", hamburger2.calculatePrice());
 // // я тут передумал и решил добавить еще приправу
-// hamburger2.addTopping(Hamburger.TOPPING_rty);
+// hamburger2.addTopping(Hamburger.TOPPING_wer);
+// hamburger2.addTopping(Hamburger.TOPPING_MAYO);
 //  hamburger2.addTopping(Hamburger.TOPPING_SPICE);
 // //  hamburger2.addTopping(Hamburger.TOPPING_MAYO);
 // //  hamburger2.addTopping(Hamburger.TOPPING_SPICE);
